@@ -1,0 +1,49 @@
+/* using this way is selecting all the elements and applying styles to it */
+/* * {
+    border: 3px solid black;
+} */
+
+/* We can also set few inheriting properties in 'html' tag, It also does same like 'body' */
+/* html {
+    font-size: 22px;
+} */
+
+body {
+/* This is inherited to all */
+    font-size: 22px;
+/* Here, this cannot be inherited */
+    /* border: 3px solid black; */
+}
+
+/* The properties which can be interitable will be inherited to all but except for form elements */
+/* we can use 'font-size': 'inherit' property */
+button, text, input {
+    font-size: inherit;
+}
+
+h1, h2 {
+    color: blue;
+}
+
+.highlight {
+    text-transform: uppercase;
+    background-color: gold;
+}
+
+/* Class has more priority than tags */
+.gray {
+    color: gray;
+}
+
+p {
+    color: purple;
+}
+
+p {
+    color: red;
+}
+
+/* id has more priority than class */
+/* #second {
+    font-style: italic;
+} */
