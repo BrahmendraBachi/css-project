@@ -21,3 +21,8 @@
 1. https://coolors.co/contrast-checker/112a46-45b69c
 
     1. helps in finding the best contrast for the selected background and text-color
+
+## Units ans Sizes
+
+1. Not always recommended to use absolute sizes `(ex: 16px, 32px...)`
+2. https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units

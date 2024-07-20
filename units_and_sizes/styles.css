@@ -1,0 +1,72 @@
+
+header {
+    width: 80%;
+    /* width: 100%; */
+}
+
+/* h1 tag present in header tag */
+/* If we give width 50%, it takes 50% width of it's parent element */
+h1 {
+    border: 2px dashed red;
+    width: 50%;
+}
+
+/* It's always recommended to use relative units instead of abslute units */
+/* relative-units: 1rem,.. */
+/* absolute-units: 1px, 1cm.. */
+
+/* rem ==> root element*/
+/* For most browsers, 1rem set to 16px as default */
+/* rem is relative to root's element, not to parent element */
+p {
+    font-size: 2rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+main {
+    font-size: 1rem;
+}
+
+/* here, 1em takes relative to it's parent element */
+/* here, 'main' is parent of 'p' */
+/* 2em ==> 2(font-size of 'main') = 2(1rem) = 2rem */
+p {
+    font-size: 2em;
+    /* 'ch' represents characters, here '40c'h represents 40 characters */
+    width: 40ch;
+}
+
+h1 {
+    /* font-size is 3rem which is 3(16px) = 48px */
+    font-size: 3rem;
+    /* padding is 0.5em which is 0.5(3rem) = 0.5(48px) = 24px */
+    padding: 0.5em;
+}
+
+/* Just to disable default padding and margin for all the elements */
+* {
+    padding: 0;
+    margin: 0; 
+    box-sizing: border-box;  
+}
+
+/* To enable this case, please uncomment additional paragraphs in html*/
+
+/* If we give width to 100vw, if we have more content then scroll-y displays */
+/* Becuase of scroll-y is actually taking some with to display on it, scroll-x will display */
+/* So, It's not recommended */
+/* 
+body {
+    width: 100vw;
+} */
+
+/* To enable this case, please uncomment additional paragraphs in html */
+/* If you have content less than the 100%, then the body element takes height of the preseted content */
+/* If you have to make your body to take 100% height on any case, then this 'min-height: 100vh' is better to use */
+body {
+    min-height: 100vh;
+}
+
