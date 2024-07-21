@@ -1,0 +1,50 @@
+/*
+    Typography is the way that text 
+    is arranged and presented
+*/
+
+body {
+    font-size: 2rem;
+    padding: 10px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+/* please uncomment <form> content in html to check these styles*/
+/* font-size is not inherited to input, button and some of the form elements. So, 'font: inherit' property helps to inherit */
+/* 
+input, button {
+    font: inherit;
+} */
+
+p {
+    /* text-decoration is one way to decorate the text, you can play with all the properties */
+    /* text-decoration: underline; */
+    /* text-decoration: line-through; */
+    text-decoration: none;
+
+    /* we can use this prop to transform our text to lowercase, uppercase, capitalize and few other */
+    text-transform: lowercase;
+    /* text-transform: uppercase; */
+    
+    /* text-align property is used to align the text in left, right, center, etc */
+    text-align: left; /* default */
+    
+    /* text ends in right side with uniform space */
+    /* text-align: justify; */
+
+    /* It creates intendation at the first line*/
+    text-indent: 4rem;
+
+    /* Line height prop used to specify height between two displayed lines of text */
+    line-height: 1.2; /* default */
+    /* line-height: 1.5 */
+
+    /* distance between to two letters */
+    letter-spacing: 0.01em;
+
+    /* distance between two words */
+    word-spacing: 0.1rem;
+
+}

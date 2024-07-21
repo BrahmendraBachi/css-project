@@ -25,4 +25,11 @@
 ## Units ans Sizes
 
 1. Not always recommended to use absolute sizes `(ex: 16px, 32px...)`
+
 2. https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units
+
+## Typography
+
+1. https://fonts.google.com/
+    
+    1. To download fonts and use it in our styles.css
