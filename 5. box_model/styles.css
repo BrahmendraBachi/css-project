@@ -1,0 +1,54 @@
+
+/* box-sizing: border-box will calculate width relative to border-box*/
+/* box-sizing: content-box will calculate width relative to content*/
+/* Please comment box-sizing: content-box and compare with the computed styles of h1 element in dev tools*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* box-sizing: content-box; */
+}
+
+/*  */
+.container {
+    font-size: 1.5rem;
+    padding: 1.5em;
+    width: 80%;
+    margin: 1.5rem;
+    /* margin-top: 1.5rem;
+    margin-right: 2rem;
+    margin-bottom: 2.5rem;
+    margin-left: 3rem; */
+    /* This above 4 lines of code is equivalent to below line */
+    /* margin: 1rem 2rem 2.5rem 3rem; */
+    border: 10px double red;
+
+    /* Similar can do with border as well like border-top, border-right, etc*/
+
+    /* border-top: 1px solid yellow; */
+
+    /* Few extra things with border */
+    /* Comment one by one line and check the difference */
+
+    /* border-width: 4px;
+    border-top-color: red; */
+
+
+    /* Outline prop specifies extra border to the specified border */
+    /* This width and height of this outline is not comes under width of border-box */
+
+    outline: 5px solid purple;
+    outline-offset: 5px;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    /* auto property sets this element to center of the row */
+    margin: 1.5rem auto;
+    background-color: green;
+    /* This has to be half of width and height in order to form a circle */
+    border-radius: 50px;
+    outline: 2px solid red;
+    outline-offset: 5px;
+}
