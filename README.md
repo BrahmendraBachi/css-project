@@ -37,3 +37,7 @@
 ## Styling Links
 
 1. Element with pseupo-selector has more priority than the elements (only). ex: (`a:visited` > `a`)
+
+## List Styles
+
+1. `list-style-image` has more priority than `list-style-type`

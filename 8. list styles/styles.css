@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+    padding: 5% 10%;
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+}
+
+ol {
+    /* This attribute helps in changing the list-style*/
+    list-style-type: decimal;
+    /* list-style-type: lower-alpha;
+    list-style-type: upper-alpha; */
+
+    
+    /* Disables style-type */
+    list-style-type: none;
+    /* Disables padding */
+    padding: 0;
+
+}
+
+/* 'list-style-image' has more priority than 'list-style-type' */
+
+ul {
+    list-style-type: square;
+    text-align: center;
+
+    /* sets all these list items to inside by adding padding */
+    list-style-position: inside;
+    /* uncomment below line to see the difference */
+    /* list-style-position: outside; */
+
+    list-style-image: url('./images/checkmark.png');
+    
+    /* list-style: {type} {image} {position} */
+    /* we can give all these props in one prop as shown below */
+    list-style: square url('./images/checkmark.png') inside;
+
+}
+
+/* changes all list item color */
+li {
+    color: black;
+}
+
+/* changes only list item present in ul */
+ul li {
+    color: blue;
+}
+
+ul li:nth-child(2) {
+    color: skyblue;
+}
+
+/* can give 'even' or 'odd' */
+/* ul li:nth-child(odd) {
+    color: dodgerblue;
+} */
+
+ul {
+    list-style-image: none; 
+    list-style-type: square;
+}
+
+
+/* these are pseudo elements */
+/* '::marker 'works for marker of both 'ol' and 'ul' items */
+ul ::marker {
+    color: red;
+    font-family: fantasy;
+    font-size: 1em;
+    content: 'Only $5 >> ';
+}
