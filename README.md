@@ -33,3 +33,7 @@
 1. https://fonts.google.com/
     
     1. To download fonts and use it in our styles.css
+
+## Styling Links
+
+1. Element with pseupo-selector has more priority than the elements (only). ex: (`a:visited` > `a`)
