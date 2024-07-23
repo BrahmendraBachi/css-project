@@ -41,3 +41,15 @@
 ## List Styles
 
 1. `list-style-image` has more priority than `list-style-type`
+
+## Display
+
+1. `display: block` takes 100% available width
+
+    1. `p`, `main`, etc.. are examples of block level elements
+    2. `block` level elements does not stack on each other and always creates new line
+
+2. `display: inline` takes width which is required
+
+    1. `span` is an example of inline elements
+    2. `inline` elements does stack on other and does not create new line

@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+}
+
+/* 'p' is a block level element */
+/* here, it takes 100% width (available width) */
+p {
+    background-color: lightgray;
+}
+
+/* 'main' is a block level element */
+/* here, it only takes 50% width (available width) */
+/* uncomment to see effects */
+/* main {
+    background-color: red;
+    width: 50%;
+}
+
+p {
+    background-color: blue;
+} */
+
+/* .p_class {
+    background-color: blanchedalmond;
+} */
+
+/*  'span' is an inline element */
+.opposite {
+    background-color: black;
+    color: whitesmoke;
+
+    /* margin-top and height has no effect for inline elements */
+    /* margin-top: 100px;
+    height: 200px; */
+
+    /* padding has an effext */
+    padding: 1rem;
+
+    /* more padding can overlap over other elements */
+    /* padding: 3rem; */
+}
+
+/* this helps in understanding 'display: inline-block' property */
+/* more padding or margin-top or more height will not overlap on other elements*/
+/* after adding display: 'inline-block', these props will work */
+
+/* uncomment to see effects and comment above '.opposite' class */
+/* .opposite {
+    display: inline-block;
+    background-color: black;
+    color: whitesmoke;
+
+    padding: 3rem;
+
+    margin-top: 1rem;
+    height: 2rem;
+
+} */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+    text-align: right;
+    background-color: black;
+    padding: 0.5rem;
+}
+
+li {
+    /* this property takes background for the entire block as 'li' is a block level element */
+    /* background-color: blue; */
+
+    display: inline-block;
+    margin-inline: 0.5rem;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+}
+
+li a:hover, li a:focus {
+    text-decoration: underline;
+}
