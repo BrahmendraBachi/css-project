@@ -53,3 +53,7 @@
 
     1. `span` is an example of inline elements
     2. `inline` elements does stack on other and does not create new line
+
+## Columns
+
+1. Margin Collapsing

@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+}
+
+/* Try to play with the html content by adjusting width of the screen in every case */
+
+/* "column-count: n" prop displays the content as columns and the "n" value represents no of columns to display content*/
+.columns {
+    /* column-count: 4;
+    column-width: 250px; */
+
+    /* use this prop instead of above props */
+    columns: 4 250px;
+    /* seperation between columns as a border */
+    column-rule: 3px solid #333;
+    column-gap: 3rem;
+}
+/* here, we have given margin-top: 0 has higher specificity than just styling with 'p' */
+.columns p {
+    margin-top: 0;
+}
+
+.columns h2 {
+    margin-top: 0;
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    /* this prop helps not to break content between two columns */
+    break-inside: avoid;
+}
+
+/* makes no effect for 'margin-top' prop, if we try to override in this selector ('.quote') */
+/* .quote {
+    margin-top: 3rem;
+} */
+
+/* as 'margin-top' is specified with high specificity ('.columns p' class), we cannot directly give just '.quote' class to override
+    margin-top. So, '.columns .quote' selector should be used (below)*/
+.columns .quote {
+    font-size: 3rem;
+    text-align: center;
+
+    /* display content inside the columns by breaking it */
+    column-span: all;
+    color: #333;
+
+    /* now, it overrides the 'margin-top' prop present in '.columns p' selector */
+    margin-top: 3rem;
+}
+
+
+/* this avoids wrapping the text, when screen size reduces */
+.no_wrap {
+    white-space: nowrap;
+}
