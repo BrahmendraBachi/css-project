@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+}
+
+/* block class is given top of 'p' elements */
+/* as div is block level element, it starts the 'p' elements after the block (irrespective of if's width and height') */
+.block {
+    width: 30vw;
+    height: 30vh;
+    background-color: black;
+    color: white;
+}
+
+
+/* if we want to display the content side to block, we need to use the float property to 'block' element.*/
+/* this will allow the 'p' elements to display side to 'block' element*/
+.left {
+    float: left;
+    margin-right: 1rem;
+}
+
+.right {
+    float: right;
+    margin-left: 1rem;
+}
+
+
+/* if we want to display only two paras ('p' elements) inline with 'block' and clear the view. we can set the 'clear' property to enable that */
+/* it clears the 3rd parah (as we have added this 'clear' after 2 'p's) and starts it at the end of 'block' element
+    if 2 paras ('p' elements) fit in the right space of 'block' element and 3rd parah starts with in the block */
+.clear {
+    clear: both;
+}
+
+
+/* here this is a different case. for this we need to uncomment section tag in html */
+/* now, we are making 'block' and first two 'p's as a container */
+/* if we comment 'clear' element, the result will not come as expected */
+/* here, 'block' element has 30vh but two 'p's are consuming 20vh, then this 'section' class only takes to the 20vh height  */
+/* in such case, background is only applied to 20vh. It looks like remaing 'block' height 10vh is pushed out of 'section' class */
+/* to address this, there are two props */
+section {
+    background-color: bisque;
+    padding: 1rem;
+    /* these are the two props, but the most useful and recommended is 'display: flow-root' prop */
+    /* overflow: auto; */
+    display: flow-root;
+}
