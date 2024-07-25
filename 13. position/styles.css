@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Lobster&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5rem;
+    min-height: 200vh;
+}
+
+.outer-container {
+    border: 3px dashed #000;
+    width: 75vw;
+    height: 85vh;
+    margin: 40px auto;
+    position: relative;
+}
+
+.inner-container {
+    border: 2px solid #00f;
+    width: 40vw;
+    height: 50vh;
+    margin: 200px auto;
+    /* position: relative; */
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    color: #fff;
+    padding: 1rem;
+}
+
+/* if 'position: absolute' works with the ancestors "position" prop on a specificity. */
+/* here, for '.inner-container' we have 'position:relative' prop. So, It takes it's absolute position to place it */
+/* if we comment 'position:relative' prop in '.inner-container' class and uncomment in '.outer-container' class, it takes position to that outer-container*/
+/* if we comment 'position:relative' in both the props, it takes absolute position of body */
+/* if we have 'position: relative' to one or more ancestors, then it will take more specific ancestor (i.e., nearest one) */
+.absolute {
+    position: absolute;
+    background-color: #333;
+    top: 0;
+    left: 0;
+
+    /* these props will take according to the ancestor element */
+    /* top: 100px;
+    left: 50px; */
+}
+
+/* 'position: relative' prop takes position to it's parent element. It won't depend on any other element */
+.relative {
+    position: relative;
+    background-color: blue;
+    top: 0;
+    left: 0;
+}
+
+/* position: 'fixed' */
+/* 'fixed' elements won't change on scroll */
+/* if we don't specify any 'top', 'bottom', 'left', 'right' it takes it's relative position */
+/* if we specify any props 'top', 'bottom', 'left', 'right', then it will take the fixed position which we have specified */
+/* for testing */
+/* don't specify any props and check view (it takes the relative position)*/
+/* and specify 'top: 0px' and 'left: 0' */
+/* and specify 'top: 100px' and left: '300px' ( and check view */
+/* you can see the difference */
+.fixed {
+    position: fixed;
+    background-color: green;
+    /* top: 100px;
+    left: 330px; */
+    top: 0;
+    left: 0;
+}
+
+/* position: sticky */
+.sticky {
+    position: sticky;
+    background-color: brown;
+    top: 0px;
+    /* top: 10px; */
+    /* top: 400px;
+    top: 900px; */
+}
+
+
+/* This is the case for Practice template  */
+
+
+body {
+    font-size: 3rem;
+}
+
+section {
+    height: 100vh;
+}
+
+header, footer {
+    text-align: center;
+    color: white;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    font-size: 5rem;
+}
+
+h2 {
+    text-align: center;
+}
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}
+
+/* footer {
+    position: fixed;
+    display: block;
+    bottom: 0;
+    text-align: center;
+    margin: 0 auto;
+    background-color: black;
+} */
+
+footer {
+    background-color: antiquewhite;
+    /* footer is block level element, but as we are using 'position: fixed', we should use this 'width: 100%' property to display as a block */
+    
+    position: sticky;
+    bottom: 0;
+
+    /* these both props has the same effect */
+    /* width: 100%;
+    position: fixed; */
+    
+}
+
+.social {
+    position: fixed;
+    top: 50%;
+    font-size: 3rem;
+    z-index: 1;
+}
