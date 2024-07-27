@@ -65,7 +65,6 @@ body {
     align-content: space-evenly;
     /* align-content: flex-start; */
 
-
 }
 
 .box {
@@ -114,9 +113,12 @@ body {
     /* --> 'order' prop specifies the priority towards the end for the flex-item */
     /* --> initially all the flex-items has same 'order: 1', so it displays in order usually */
     /* --> setting this 'order: 2' for 2nd flex-item has more priority to display at the 'end', so it displays 'end' and rest remain same*/
-    order: 2;
+    /* order: 2; */
     /* --> this displays at the 'first' */
     /* order: -1; */
+
+    /* --> this 'prop' is used to align the specific flex-item */
+    /* align-self: flex-end; */
 
 }
 
