@@ -58,8 +58,14 @@
 
 1. Margin Collapsing
 
-## FLEX-BOX
+## Flex-Box
 
 1. https://flexboxfroggy.com/
 
     1. visit to pracice more on styling in `flex-box`
+
+## Grid Layout
+
+1. https://cssgridgarden.com/
+
+    1. visit to pracice more on styling in `grid`

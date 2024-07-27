@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    min-height: 100vh;
+
+    display: grid;
+
+    /* --> We are displaying body grid as 9 cols */
+    grid-template-columns: repeat(9, 1fr);
+
+    grid-auto-rows: 50px auto 50px;
+
+    /* --> represents a template area of 9 columns with 9 selectors */
+    /* --> 'hd' represents 'grid-area' of '.header' */
+    /* --> 'mn' represents 'grid-area' of '.main' */
+    /* --> 'sb' represents 'grid-area' of '.sidebar' */
+    /* --> 'ft' represents 'grid-area' of '.footer' */
+    grid-template-areas:
+        "hd hd hd hd hd hd hd hd hd"
+        "mn mn mn mn mn mn sb sb sb"
+        "ft ft ft ft ft ft ft ft ft";
+
+    gap: 0 1rem;
+}
+
+.el {
+    background-color: rebeccapurple;
+    color: #fff;
+    display: grid;
+    place-content: center;
+}
+
+.header {
+    grid-area: hd;
+}
+
+.sidebar {
+    grid-area: sb;
+    background-color: #00f;
+}
+
+.footer {
+    grid-area: ft;
+}
+
+
+
+.container {
+    /* min-height: 400px; */
+    display: grid;
+    grid-area: mn;
+
+    /* --> specifies grid direction */
+    /* grid-auto-flow: column; */
+
+    /* --> specifies each column and row width */
+    /* grid-auto-columns: 200px; */
+    /* grid-auto-rows: 100px */
+
+    /* --> specifies column width (takes 100% width and splits into ratio mentioned)*/
+    /* --> we have specified three colmns, so it takes three columns*/
+    grid-template-columns: 1fr 2fr 1fr;
+
+    /* --> displays 4 difference colums (adjusts rows accordingly) */
+    grid-template-columns: repeat(4, 1fr);
+
+    /* --> we can give patterns to grid-columns */
+    /* --> here, it also displays 4 columns (2 * len(pattern) = 2 * 2 = 4)  */
+    /* --> 1st column = 1fr, 2nd column = 2fr, 3rd column = 1fr, 4th column = 2fr */
+    /* --> rows are created automatically based on the column pattern */
+    grid-template-columns: repeat(2, 1fr 2fr);
+
+    /* --> please uncomment 'min-height' prop */
+    /* --> 'minmax(a, b)' specifies that it takes atleast 'a' height (i.e,. considers 'b' if 'b' > 'a' else 'a') */
+    grid-auto-rows: minmax(150px, auto);
+
+    /* --> specifies gap between two rows and two columns */
+    /* row-gap: 1em;
+    column-gap: 1em; */
+
+    /* --> can write 'row-gap' and 'row-col' in one prop */
+    /* --> 'gap: ${row-gap} ${col-gap}' */
+    gap: 1em 1em; /* (or 1em) */
+}
+
+.box {
+    background-color: #000;
+    color: #fff;
+    font-size: 2rem;
+    padding: 0.5rem;
+
+    display: grid;
+
+    /* align-content: center;
+    justify-content: center; */
+
+    /* --> 'align-content' and 'justify-content' can be specified in one prop */
+    /* --> 'place-content: ${align-content} ${justify-content}' */
+    place-content: center;
+}
+
+.box:first-child {
+    background-color: blue;
+    /* --> specifies start and end points of column for first-child */
+    /* grid-column-start: 1;
+    grid-column-end: 4; */
+
+    /* --> specifies start and end points of column for first-child */
+    /* grid-row-start: 1;
+    grid-row-end: 3; */
+
+    /* we can specify 'grid-column-start' and 'grid-column-end' in one prop*/
+    /* grid-column: ${grid-column-start} / ${grid-column-end} */
+    grid-column: 1 / 4;
+
+    /* we can specify 'grid-row-start' and 'grid-row-end' in one prop*/
+    /* grid-column: ${grid-row-start} / ${grid-row-end} */
+    grid-row: 1 / 3;
+}
+
+.box:nth-child(2) {
+    background-color: purple;
+    grid-column: 1 / 5;
+    grid-row: 3 / 4;
+}
