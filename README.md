@@ -57,3 +57,9 @@
 ## Columns
 
 1. Margin Collapsing
+
+## FLEX-BOX
+
+1. https://flexboxfroggy.com/
+
+    1. visit to pracice more on styling in `flex-box`
