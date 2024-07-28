@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Utility Classes --> Start */
+.nowrap {
+    white-space: nowrap;
+}
+
+/* --> 'img' is an inline elmenet */
+/* --> it will not take the entire width and height of the container */
+/* --> it is recommended to display 'img' as a 'block' for some spacing issues */
+img {
+    display: block;
+}
+
+/* --> not to display content */
+.offscreen {
+    position: absolute;
+    left: -100000px;
+}
+
+/* End --> Utility Classes */
+
+body {
+    font-family: "Nunito", sans-serif;
+    min-height: 100vh;
+
+    /* ==> please comment entire html */
+
+    /* --> gradients all the colors in the mentioned order at the mentioned place */
+    /* background-image: linear-gradient(to left, purple, #fff); */
+    
+    background-color: aliceblue;
+    
+    /* --> we can use two backgrounds at a same time */
+    /* --> all props for the backround can be written twice by comma seperated */
+    background-image: url("./img/bubbles.png"), linear-gradient(to left, steelblue, #fff);
+    background-repeat: repeat-y, no-repeat;
+    background-position: right, center;
+    background-size: 20%, auto;
+}
+
+/* .container {
+    background-color: rgb(251, 210, 156);
+    background-image: url("./img/map-2176x1451.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+
+.hero {
+    border-bottom: 2px solid black;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+
+    background-color: rgb(251, 210, 156);
+    /* background-image: url("./img/scenic-2200x1331.png"); */
+
+    /* --> by default, 'background-repeat' is set to 'repeat' mode, to repeat the img when the image size is smaller than the container */
+    /* --> 'no-repeat' mode will not repeat the image */
+    /* background-repeat: no-repeat; */
+
+    /* --> here, "./img/scenic-2200x1331.png" has more width and height that the container */
+    /* --> when we give this big image to small container (i.e., '.hero'), it only takes the required portion of it */
+    /* --> 'background-size: cover', this prop shrtiks the entire image to the size of the container (i.e., '.hero') and displays the entire image */
+    background-size: cover;
+
+    /* --> please comment when using in 'div.container' */
+    /* background-image: url("./img/map-2176x1451.png");
+    background-size: cover; */
+}
+
+.h1 {
+    font-size: 500%;
+    color: aliceblue;
+    text-shadow: 2px 2px 5px #000;
+    /* background-color: hsla(0, 0%, 0%, 0.403);
+    padding: 0.25rem;
+    border-radius: 10px; */
+
+}
+
+
+.profile-pic-picture {
+    width: 35%;
+}
+
+.profile-pic-picture img {
+    width: 100%;
+    height: auto;
+    min-width: 100px;
+    border: 5px double gray;
+    border-radius: 50%;
+}
+
+.example {/* --> it takes 25%  of the container */
+    border-top: 1rem;
+    padding-left: 20px;
+    border: 1px solid red;
+}
+
+.example img {
+    
+    width: 25%; /* --> it takes 25%  of the container */
+
+    /* --> generally, we don't set height. height will adjust based on width */
+    /* --> but, this works only when we did not mention any 'width' and 'height' attributes in 'img' tag */
+    /* --> so, making 'height: auto' will adjusts automatically according to width */
+    height: auto;
+}
+
+
+/* here, I apply the same classes but for the 'div.container' html */
+
+.container {
+    background-color: rgb(251, 210, 156);
+    background-image: url("./img/map-2176x1451.png");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+.hero {
+    border-bottom: 2px solid black;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+
+    background-color: hsla(0, 0%, 100%, 0.344);
+}
+
+.clip {
+    font-weight: 900;
+    font-size: 18rem;
+    align-items: center;
+    text-align: center;
+    background-image: url("img/scenic-2200x1331.png");
+    background-size: 100%;
+    text-transform: uppercase;
+
+    /* we can clip the text into a backround of an image */
+    -webkit-background-clip: text;
+    color: hsla(0, 0%, 0%, 0.216)
+}

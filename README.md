@@ -1,5 +1,10 @@
 # CSS-PROJECT
 
+## Commons
+
+1. https://caniuse.com/
+    1. Helps in usage of few properties on a browser specific
+
 ## Selectors
 
 1. Priority based styles is applied
