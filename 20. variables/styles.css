@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+/* || RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* || VARIABLES */
+/* --> common way to declare all the variables */
+/* --> variables declared here will be inherited throughout everywhere */
+:root {
+    /* COLORS */
+    --BGCOLOR: #475569;
+    --ALT-BGCOLOR: #1E293B;
+    --RADIAL-COLOR: whitesmoke;
+    --LIGHT-COLOR: whitesmoke;
+    --DARK-COLOR: #000;
+
+    /* FONT */
+    --FF: "Nunito", sans-serif;
+    --FS: 1.5rem;
+    --FS-XL: 3rem;
+    
+    /* SQUARE */
+    --SQUARE-BGCOLOR: papayawhip;
+    --SQUARE-SIZE: max(150px, 20vw);
+    
+    /* GENERAL */
+    --PADDING: 0.5rem;
+    --SHADOWS: 0 6px 5px -5px var(--DARK-COLOR);
+    --BORDERS: 2px solid var(--DARK-COLOR);
+}
+
+/* --> 'prefers-color-scheme' query for theme selection */
+/* --> in order to work on these styles, please enable dark mode in personalize settings */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --BGCOLOR: #000;
+        --ALT-BGCOLOR: #333;
+        --RADIAL-COLOR: rgb(217, 217, 217);
+        --SQUARE-BGCOLOR: rgb(165, 147, 165);
+
+    }
+}
+
+
+/* || GENERAL STYLES */
+body {
+    font: var(--FS) var(--FF);
+    min-height: 100vh;
+
+    background-color: var(--BGCOLOR);
+    background-image: radial-gradient(var(--RADIAL-COLOR), var(--BGCOLOR));
+    display: flex;
+    flex-direction: column;
+}
+
+header,
+nav,
+footer {
+    display: grid;
+    place-content: center;
+    grid-template-columns: 100%;
+    text-align: center;
+}
+
+header,
+footer {
+    position: sticky;
+    background-color: var(--ALT-BGCOLOR);
+    color: var(--LIGHT-COLOR);
+}
+
+header {
+    top: 0;
+}
+
+nav {
+    background-color: #fff;
+    color: var(--DARK-COLOR);
+    padding: var(--PADDING);
+    border-bottom: var(--BORDERS);
+    box-shadow: 0 6px 5px -5px var(--DARK-COLOR);
+}
+
+main {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: row wrap;
+    gap: min(4vw, 15px);
+}
+
+footer {
+    bottom: 0;
+}
+
+/* || FEATURES */
+.square {
+    background-color: var(--SQUARE-BGCOLOR);
+    width: var(--SQUARE-SIZE);
+    height: var(--SQUARE-SIZE);
+    display: grid;
+    place-content: center;
+    border-radius: 15px;
+    font-size: var(--FS-XL);
+    box-shadow: var(--SHADOWS);
+    border: var(--BORDERS );
+}
+
+.square--highlight {
+    --SQUARE-BGCOLOR: cornflowerblue;
+}
