@@ -73,4 +73,17 @@
 
 1. https://cssgridgarden.com/
 
-    1. visit to pracice more on styling in `grid`
+    1. visit to pracice more on styling in `grid` position: sticky;
+    background-color: #1e293b;
+    color: whitesmoke;
+    text-align: center;
+
+## Pseudo
+
+1. ### Pseudo elements
+
+    1. specified using `::`
+
+2. ### Pseudo elements
+
+    1. specified by using `:`
