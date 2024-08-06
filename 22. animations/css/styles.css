@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 1.5rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+div {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #000;
+    display: grid;
+    place-content: center;
+}
+
+
+/* has all transform properties in Y-direction */
+div:first-child {
+    background-color: dodgerblue;
+    
+    /* 'transform' property */
+
+    /* 1. 'translate' */
+    
+    /* --> 'transform' property transforms the selected item */
+    /* --> 'transform: translate${direction}(${units})'. here, direction can be 'X', 'Y', 'Z' and 'units' can be be taken as positive and negative (i.e., 50%, -50%)
+    /* --> 'translateX(50%)', 'translateY(50%)' moves 50% width in X-direction and 50% height in Y-direction respectively */
+    transform: translateX(50%);
+
+    /* --> this moves 100% width (units) in x-direction and 2rem height (units) in y-direction */
+    /* transform: translate(100%, 2rem); */
+
+
+    /* 2. 'rotate' */
+
+    /* --> rotateX(50deg) takes it's axis as X-axis and rotates perpendicular to Y-axis. (similary 'rotateY' and 'rotateZ') */
+    /* transform: rotateX(50deg); /*
+
+    /* 3. scale */
+
+    /* --> 'scaleX', 'scaleY' scales in X-direction and Y-direction respectively. */
+    /* transform: scaleX(120%); */
+
+    /* --> 'scale(${X-direction}, ${Y-direction})' scales in both directions */
+    /* transform: scale(120%, 50%); */
+
+    /* 4. skew */
+
+    /* --> 'skewX', 'skewY' skews in X and Y direction respectively */
+    /* transform: skewX(10deg);
+    transform: skewY(10deg); */
+
+    /* 'skew(${X-direction} ${Y-direction}' skews in both directions */
+    /* transform: skew(10deg, 10deg); */
+
+
+}
+
+/* has all transform properties in Y-direction */
+div:nth-child(2) { 
+    background-color: yellow;
+    /* transform: translateY(50%); */
+    /* transform: rotateY(50deg); */
+    /* transform: scaleY(50%); */
+}
+
+/* has all transform properties in Z-direction */
+div:last-child {
+    background-color: limegreen;
+
+    /* --> 'rotateZ(angle)' and 'rotate(angle)' are same*/
+    /* transform: rotateZ(45deg);
+    transform: rotate(45deg); */
+}
+
+div:hover {
+    background-color: midnightblue;
+
+    /* --> 'transition-property' takes values as any css property (ie., background-color, color, font-weight, etc..) and starts applying class as a transition */
+    /* --> it takes 'background-color' css prop and applies 'transition-duration' and 'transition-delay'*/
+    /* transition-property: background-color;
+    transition-duration: 2s;
+    transition-delay: 0.5s; */
+
+    /* --> we can give multiple props for 'transition-property' */
+    /* --> this applies the same to 'transition-duration' and transition-delay (i.e., we can give two values if two props are specified for 'transition-property' */
+    transition-property: background-color, transform;
+    transition-duration: 2s;
+    transition-delay: 0.5s;
+
+    /* --> this prop helps to apply timing function which tells transition prop how to apply transition ('i.e., start-fast end-slow, start-slow end-fast, start-slow   fast end-slow) */
+    transition-timing-function: ease-in-out; /* (start-slow fast end-slow) */
+
+    /* --> we can use all these properties in one line */
+    /* 'transition: {transition-property} {transition-duration} {transition-timing-funtion} {transition-delay}' */
+    transition: all 2s ease-in-out 0.5s;
+}
+
+div:last-child:hover {
+    transform: rotate(180deg);
+}
+
+.animate {
+    animation-name: slide;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+    animation-iteration-count: 2;
+
+    /* --> 'animation-direction: normal' will goes from (0-100)% in the first iteration and starts again from (0-100)% in the second iteration */
+    animation-direction: normal;
+
+    /* --> 'animation-direction: alternate' will goes from (0-100)% in the first-iteration and starts from (100-0)% sin the second iteration */
+    /* animation-direction: alternate; */
+
+    /* --> This will set the css properties which are present at 100% after animation done */
+    /* --> In this case, at 100%, we have 'background-color: rebeccapurple', so it stays at the same color */
+    animation-fill-mode: forwards;
+
+    /* --> This will revert the color to 'background-color' to 'limegreen' which is the initial one  */
+    animation-fill-mode: backwards; /* default value */
+
+    /* --> shorthand */
+    /* --> animation: {animation-duration} {animation-timing-function} {animation-delay} {animation-iteration-count} {animation-direction} {animation-fill-mode} {animation-name}*/
+    animation: 5s ease-in-out 1s 2 normal forwards slide;
+}
+
+/* --> 'slide' is the identifier to which animation should be applied */
+/* --> we have declared 'animation-name: slide' in '.animation' class, so it takes that class */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    33% {
+        transform: translateX(300px) rotate(180deg);
+    }
+
+    66% {
+        transform: translateX(-300px) rotate(-180deg);
+    }
+
+    100% {
+        transform: translateX(0);
+        background-color: rebeccapurple;
+    }
+}
